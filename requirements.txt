@@ -1,0 +1,5 @@
+Flask
+tensorflow
+Pillow
+requests==2.29.0
+beautifulsoup4
