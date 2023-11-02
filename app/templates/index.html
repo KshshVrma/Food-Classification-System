@@ -132,7 +132,7 @@ body::before {
         }
 
         p {
-            font-size: 18px;
+            font-size: 24px;
             color: #007BFF;
         }
         .styled-button {
@@ -155,7 +155,7 @@ body::before {
 <body>
    
     <div class="container">
-        <h1>Image Classification</h1>
+        <h1>Indian food Classification</h1>
         <form action="/upload" method="post" enctype="multipart/form-data">
             <label for="file">Choose an image:</label>
             <input type="file" name="file" id="file" accept="image/*">
@@ -165,9 +165,15 @@ body::before {
             <h2>Classification Result:</h2>
             <p><b>{{ result }}</b></p>
             <br/>
+            <!-- <img src="{{ image_path }}" alt="Uploaded Image"> -->
             <button class="styled-button">
                 <a href={{ pid }} style="color: #fff; text-decoration: none;">Order on Zomato</a>
             </button>
+            <br>
+            <br>
+            <br>
+            <button>
+              <a href={{nit}} style="color: #fff; text-decoration: none;">DETAILS</a></button>
         </div>
     </div>
     

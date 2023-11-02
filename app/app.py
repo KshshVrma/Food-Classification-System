@@ -61,77 +61,100 @@ def upload_file():
         that=predicted_label[2:]
         cal =0
         zid=11
+        nut="https://en.wikipedia.org/wiki/Indian_cuisine";
 
         if predicted_label == "0 burger":
             cal = 300
             zid=9055
+            nut="https://en.wikipedia.org/wiki/Veggie_burger";
         elif predicted_label == "1 butter_naan":
             cal = 350
             zid=68387
+            nut="https://en.wikipedia.org/wiki/Naan";
+
         elif predicted_label == "2 chai":
             cal = 40
             zid=13620
+            nut="https://en.wikipedia.org/wiki/Masala_chai";
         elif predicted_label == "3 chapati":
             cal = 80
             zid=26919
+            nut="https://en.wikipedia.org/wiki/Chapati";
         elif predicted_label == "4 chole_bhature":
             cal = 450
             zid=60192
+            nut="https://en.wikipedia.org/wiki/Chole_bhature";
         elif predicted_label == "5 dal_makhani":
             cal = 200
             zid=44987
+            nut="https://en.wikipedia.org/wiki/Dal_makhani";
         elif predicted_label == "6 dholkla":
             cal = 200
             zid=66471
+            nut="https://en.wikipedia.org/wiki/Dhokla";
         elif predicted_label == "7 fried_rice":
             cal = 250
             zid=35301
+            nut="https://en.wikipedia.org/wiki/Fried_rice";
         elif predicted_label == "8 idli":
             cal = 50
             zid=35114
+            nut="https://en.wikipedia.org/wiki/Idli";
         elif predicted_label == "9 jalebi":
             cal = 400
             zid=37104
+            nut="https://en.wikipedia.org/wiki/Jalebi";
         elif predicted_label == "10 kaathi_rolls":
             cal = 300
             zid=62927
+            nut="https://en.wikipedia.org/wiki/Kati_roll";
         elif predicted_label == "11 kadai_paneer":
             cal = 250
             zid=63440
+            nut="https://en.wikipedia.org/wiki/Kadai_paneer";
         elif predicted_label == "12 kulfi":
             cal = 250
             zid=32439
+            nut="https://en.wikipedia.org/wiki/Kulfi";
         elif predicted_label == "13 masala_dosa":
             cal = 200
             zid=70735
+            nut="https://en.wikipedia.org/wiki/Masala_dosa"
         elif predicted_label == "14 momos":
             cal = 80
             zid=8497
+            nut="https://en.wikipedia.org/wiki/Momos";
         elif predicted_label == "15 paani_puri":
             cal = 70
               # Note: This is an approximate value per serving, not per 100 grams.
             zid=70230
+            nut="https://en.wikipedia.org/wiki/Panipuri";
         elif predicted_label == "16 pakode":
             cal = 300
             zid=13094
+            nut="https://en.wikipedia.org/wiki/Falafel";
         elif predicted_label == "17 pav_bhaji":
             cal = 250
             zid=63559
+            nut="https://en.wikipedia.org/wiki/Pav_bhaji";
         elif predicted_label == "18 pizza":
             cal = 300
             zid=68987
+            nut="https://en.wikipedia.org/wiki/Pizza";
         elif predicted_label == "19 samosa":
             cal = 350
             zid=871
+            nut="https://en.wikipedia.org/wiki/Samosa";
         else:
-            cal = 0
+            cal = 100
             zid=13620
+            nut="https://en.wikipedia.org/wiki/Indian_cuisine";
     
 
         if zid !=11:
-            return render_template('index.html',result=f'Prediction: {that} and calories per 100 gram is {cal}',pid=f'https://www.zomato.com/chennai/delivery?dishv2_id={zid}')
+            return render_template('index.html',result=f'Prediction: {that} and calories per 100 grams is {cal}',pid=f'https://www.zomato.com/chennai/delivery?dishv2_id={zid}',nit=f'{nut}')
         else:
-            return render_template('index.html',result=f'Prediction: {that} and calories per 100 gram is {cal}',pid=f'https://www.zomato.com/chennai')
+            return render_template('index.html',result=f'Prediction: {that} and calories per 100 grams is {cal}',pid=f'https://www.zomato.com/chennai',nit=f'{nut}')
 
 
 if __name__ == '__main__':
