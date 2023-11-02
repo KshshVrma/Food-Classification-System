@@ -45,7 +45,7 @@
 }
 /* Main styles */
 body {
-  margin-top: 13.5rem;
+  margin-top: 10.5rem;
   color: #999;
   font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
   text-align: center;
@@ -93,6 +93,10 @@ body::before {
         form {
             margin: 20px 0;
         }
+     .container:hover{
+      transition: transform 0.3s ease-in-out;;
+          transform: scale(1.1);
+        }
 
         label {
             display: block;
@@ -120,10 +124,11 @@ body::before {
 
         button:hover {
             background-color: #0056b3;
+            transform: scale(1.1);
         }
 
         .result {
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         h2 {
@@ -147,7 +152,8 @@ body::before {
             font-size: 16px;
         }
         .styled-button:hover {
-            background-color: #0056b3; /* Button background color on hover */
+            background-color: #0056b3;
+            transform: scale(1.1); /* Button background color on hover */
         }
         
     </style>
@@ -165,13 +171,14 @@ body::before {
             <h2>Classification Result:</h2>
             <p><b>{{ result }}</b></p>
             <br/>
+            <p>{{cati}} {{pri}}</p>
             <!-- <img src="{{ image_path }}" alt="Uploaded Image"> -->
             <button class="styled-button">
                 <a href={{ pid }} style="color: #fff; text-decoration: none;">Order on Zomato</a>
             </button>
             <br>
             <br>
-            <br>
+            
             <button>
               <a href={{nit}} style="color: #fff; text-decoration: none;">DETAILS</a></button>
         </div>
